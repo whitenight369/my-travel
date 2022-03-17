@@ -3,8 +3,13 @@ import styles from './Header.module.css';
 import { Button, Dropdown, Input, Layout, Menu, Typography } from 'antd';
 import { GlobalOutlined } from '@ant-design/icons';
 import logo from './../../assets/logo.svg';
+import { useHistory, useLocation, useParams, useRouteMatch } from 'react-router-dom';
 
 export const Header: React.FC= () => {
+    const history=useHistory();
+    const match=useRouteMatch();
+    const location=useLocation();
+    const params=useParams();
     return (<>
         <div className={styles['app-header']}>
             {/* top-header */}
@@ -24,14 +29,16 @@ export const Header: React.FC= () => {
                         语言
                     </Dropdown.Button>
                     <Button.Group className={styles['button-group']}>
-                        <Button>注册</Button>
-                        <Button>登录</Button>
+                        <Button onClick={()=>history.push('register')}>注册</Button>
+                        <Button onClick={()=>history.push('signIn')}>登录</Button>
                     </Button.Group>
                 </div>
             </div>
             <Layout.Header className={styles['main-header']}>
-                <img src={logo} className={styles['App-logo']} />
+               <span onClick={()=>history.push('/')}>
+               <img src={logo} className={styles['App-logo']} />
                 <Typography.Title className={styles['title']} level={3}>React 旅游网</Typography.Title>
+               </span>
                 <Input.Search
                     placeholder='请输入旅游目的地,主题,或者关键字'
                     className={styles['search-input']}

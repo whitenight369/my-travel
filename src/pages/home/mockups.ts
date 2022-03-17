@@ -50,7 +50,7 @@ export const productList1 = [
     price: "3499",
     touristRoutePictures: [
       {
-        url: "https://s3.ax1x.com/2020/12/15/rMQOIJ.jpg",
+        url: "https://yys.res.netease.com/pc/zt/20170731172708/data/picture/20220311/8/1366x768.jpg",
       },
     ],
   },
@@ -60,7 +60,7 @@ export const productList1 = [
     price: "5999",
     touristRoutePictures: [
       {
-        url: "https://s3.ax1x.com/2020/12/15/rMQOIJ.jpg",
+        url: "https://yys.res.netease.com/pc/zt/20170731172708/data/picture/20220311/10/1366x768.jpg",
       },
     ],
   },
@@ -70,7 +70,7 @@ export const productList1 = [
     price: "6199",
     touristRoutePictures: [
       {
-        url: "https://s3.ax1x.com/2020/12/15/rMQOIJ.jpg",
+        url: "https://yys.res.netease.com/pc/zt/20170731172708/data/picture/20220210/12/1366x768.jpg",
       },
     ],
   },
@@ -80,7 +80,7 @@ export const productList1 = [
     price: "13699",
     touristRoutePictures: [
       {
-        url: "https://s3.ax1x.com/2020/12/15/rMQOIJ.jpg",
+        url: "https://yys.res.netease.com/pc/zt/20170731172708/data/picture/20211130/1/1366x768.png",
       },
     ],
   },
@@ -90,7 +90,7 @@ export const productList1 = [
     price: "5021",
     touristRoutePictures: [
       {
-        url: "https://s3.ax1x.com/2020/12/15/rMQOIJ.jpg",
+        url: "https://yys.res.netease.com/pc/zt/20170731172708/data/picture/20220224/3/1366x768.jpg",
       },
     ],
   },
@@ -105,7 +105,7 @@ export const productList2 = [
     price: "11990",
     touristRoutePictures: [
       {
-        url: "https://s3.ax1x.com/2020/12/15/rMQOIJ.jpg",
+        url: "https://yys.res.netease.com/pc/zt/20170731172708/data/picture/20211130/6/1366x768.png",
       },
     ],
   },
@@ -115,7 +115,7 @@ export const productList2 = [
     price: "13290",
     touristRoutePictures: [
       {
-        url: "https://s3.ax1x.com/2020/12/15/rMQOIJ.jpg",
+        url: "https://yys.res.netease.com/pc/zt/20170731172708/data/picture/20220224/13/1366x768.jpg",
       },
     ],
   },
@@ -125,7 +125,7 @@ export const productList2 = [
     price: "4000",
     touristRoutePictures: [
       {
-        url: "https://s3.ax1x.com/2020/12/15/rMQOIJ.jpg",
+        url: "https://yys.res.netease.com/pc/zt/20170731172708/data/picture/20220224/21/1366x768.jpg",
       },
     ],
   },
@@ -135,7 +135,7 @@ export const productList2 = [
     price: "7399",
     touristRoutePictures: [
       {
-        url: "https://s3.ax1x.com/2020/12/15/rMQOIJ.jpg",
+        url: "https://yys.res.netease.com/pc/zt/20170731172708/data/picture/20220224/18/1366x768.jpg",
       },
     ],
   },
@@ -145,7 +145,7 @@ export const productList2 = [
     price: "3499",
     touristRoutePictures: [
       {
-        url: "https://s3.ax1x.com/2020/12/15/rMQOIJ.jpg",
+        url: "https://yys.res.netease.com/pc/zt/20170731172708/data/picture/20220224/24/1366x768.jpg",
       },
     ],
   },
@@ -155,7 +155,7 @@ export const productList2 = [
     price: "5999",
     touristRoutePictures: [
       {
-        url: "https://s3.ax1x.com/2020/12/15/rMQOIJ.jpg",
+        url: "https://yys.res.netease.com/pc/zt/20170731172708/data/picture/20210826/6/1366x768.jpg",
       },
     ],
   },
@@ -165,7 +165,7 @@ export const productList2 = [
     price: "6199",
     touristRoutePictures: [
       {
-        url: "https://s3.ax1x.com/2020/12/15/rMQOIJ.jpg",
+        url: "https://yys.res.netease.com/pc/zt/20170731172708/data/picture/20210720/12/1366x768.jpg",
       },
     ],
   },
@@ -175,7 +175,7 @@ export const productList2 = [
     price: "13699",
     touristRoutePictures: [
       {
-        url: "https://s3.ax1x.com/2020/12/15/rMQOIJ.jpg",
+        url: "https://yys.res.netease.com/pc/zt/20170731172708/data/picture/20210527/13/1366x768.jpg",
       },
     ],
   },
@@ -185,7 +185,7 @@ export const productList2 = [
     price: "5021",
     touristRoutePictures: [
       {
-        url: "https://s3.ax1x.com/2020/12/15/rMQOIJ.jpg",
+        url: "https://yys.res.netease.com/pc/zt/20170731172708/data/picture/20210317/7/1366x768.jpg",
       },
     ],
   },
@@ -200,7 +200,7 @@ export const productList3 = [
     price: "11990",
     touristRoutePictures: [
       {
-        url: "https://s3.ax1x.com/2020/12/15/rMQOIJ.jpg",
+        url: "https://yys.res.netease.com/pc/zt/20170731172708/data/picture/20210317/10/1366x768.jpg",
       },
     ],
   },
@@ -210,7 +210,7 @@ export const productList3 = [
     price: "13290",
     touristRoutePictures: [
       {
-        url: "https://s3.ax1x.com/2020/12/15/rMQOIJ.jpg",
+        url: "https://yys.res.netease.com/pc/zt/20170731172708/data/picture/20210106/9/1366x768.jpg",
       },
     ],
   },
@@ -220,7 +220,7 @@ export const productList3 = [
     price: "4000",
     touristRoutePictures: [
       {
-        url: "https://s3.ax1x.com/2020/12/15/rMQOIJ.jpg",
+        url: "https://yys.res.netease.com/pc/zt/20170731172708/data/picture/20201027/3/1366x768.jpg",
       },
     ],
   },
@@ -230,7 +230,7 @@ export const productList3 = [
     price: "7399",
     touristRoutePictures: [
       {
-        url: "https://s3.ax1x.com/2020/12/15/rMQOIJ.jpg",
+        url: "https://yys.res.netease.com/pc/zt/20170731172708/data/picture/20201027/5/1366x768.jpg",
       },
     ],
   },
@@ -240,7 +240,7 @@ export const productList3 = [
     price: "3499",
     touristRoutePictures: [
       {
-        url: "https://s3.ax1x.com/2020/12/15/rMQOIJ.jpg",
+        url: "https://yys.res.netease.com/pc/zt/20170731172708/data/picture/20200923/5/1366x768.jpg",
       },
     ],
   },
@@ -250,7 +250,7 @@ export const productList3 = [
     price: "5999",
     touristRoutePictures: [
       {
-        url: "https://s3.ax1x.com/2020/12/15/rMQOIJ.jpg",
+        url: "https://yys.res.netease.com/pc/zt/20170731172708/data/picture/20200923/19/1366x768.jpg",
       },
     ],
   },
@@ -260,7 +260,7 @@ export const productList3 = [
     price: "6199",
     touristRoutePictures: [
       {
-        url: "https://s3.ax1x.com/2020/12/15/rMQOIJ.jpg",
+        url: "https://yys.res.netease.com/pc/zt/20170731172708/data/picture/20200609/3/3/1366x768.jpg",
       },
     ],
   },
@@ -270,7 +270,7 @@ export const productList3 = [
     price: "13699",
     touristRoutePictures: [
       {
-        url: "https://s3.ax1x.com/2020/12/15/rMQOIJ.jpg",
+        url: "https://yys.res.netease.com/pc/zt/20170731172708/data/picture/20200609/3/7/1366x768.jpg",
       },
     ],
   },
@@ -280,7 +280,7 @@ export const productList3 = [
     price: "5021",
     touristRoutePictures: [
       {
-        url: "https://s3.ax1x.com/2020/12/15/rMQOIJ.jpg",
+        url: "https://yys.res.netease.com/pc/zt/20170731172708/data/picture/20200609/3/8/1366x768.jpg",
       },
     ],
   },
