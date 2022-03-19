@@ -1,4 +1,5 @@
 import i18n from "i18next";
+import { ADD_LANGUE, CHANGE_LANGUE, LanguageActionTypes } from "./langueAction";
 
 export interface LanguageState {
   language: "en" | "zh";
@@ -13,12 +14,14 @@ const defaultState: LanguageState = {
   ],
 };
 
-export default (state = defaultState, action) => {
+export default (state = defaultState, action:LanguageActionTypes) => {
+  // console.log("action",action);
+  
   switch (action.type) {
-    case "change_language":
+    case CHANGE_LANGUE:
       i18n.changeLanguage(action.payload); // 这样处理是不标准的，有副作用
       return { ...state, language: action.payload };
-    case "add_language":
+    case ADD_LANGUE:
       return {
         ...state,
         languageList: [...state.languageList, action.payload],
@@ -26,4 +29,4 @@ export default (state = defaultState, action) => {
     default:
       return state;
   }
-};
+}; 
