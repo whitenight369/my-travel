@@ -2,16 +2,33 @@ import React, { Component } from 'react';
 import { Col, Row, Typography } from 'antd';
 import { Header, Footer, Carousel, SideMenu, ProductCollection, BusinessPartners } from './../../components';
 import { productList1, productList2, productList3 } from "./mockups";
+import axios from 'axios';
 import styles from './HomePage.module.css';
 import sideImage from '../../assets/images/sider_2019_12-09.png';
 import sideImage2 from '../../assets/images/sider_2019_02-04.png';
 import sideImage3 from '../../assets/images/sider_2019_02-04-2.png';
 import {withTranslation,WithTranslation} from 'react-i18next';
 
+interface State{
+  productList:any[]
+}
 
 
 class HomePageComponent extends Component<WithTranslation> {
-  state = {}
+  constructor(props){
+    super(props);
+    this.state={
+      productList:[]
+    }
+  }
+  componentDidMount(){
+    axios("http://123.56.149.216:8080/api/productCollections",{
+      headers: {"x-icode":"FB80558A73FA658E"}
+    }).then(res=>{
+      console.log(res);
+      
+    })
+  }
 
   render() {
     const {t}=this.props;
