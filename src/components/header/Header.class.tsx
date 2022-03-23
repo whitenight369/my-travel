@@ -100,8 +100,8 @@ class HeaderComponnet extends React.Component<PropsType> {
 
 const mapStateToProps = (state:RootState) => {
   return {
-    language:state.language,
-    languageList:state.languageList
+    language:state.languageReducer.language,
+    languageList:state.languageReducer.languageList
   }
 }
 const mapDispatchToProps = (dispatch:Dispatch) => {

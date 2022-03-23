@@ -13,8 +13,8 @@ export const Header: React.FC = () => {
     const match = useRouteMatch();
     const location = useLocation();
     const params = useParams();
-    const language = useSelector(state => state.language);
-    const languageList = useSelector(state => state.languageList);
+    const language = useSelector(state => state.languageReducer.language);
+    const languageList = useSelector(state => state.languageReducer.languageList);
     const dispatch = useDispatch();
     const { t } = useTranslation();
     const menuClickHandler = (e: any) => {
