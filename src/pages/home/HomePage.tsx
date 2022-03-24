@@ -10,20 +10,13 @@ import sideImage3 from '../../assets/images/sider_2019_02-04-2.png';
 import { withTranslation, WithTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { RootState } from '../../redux/store';
-import { fetchRecommendProductFailActionCreator, fetchRecommendProductStartActionCreator, fetchRecommendProductSuccessActionCreator } from '../../redux/recommandProducts/recommendProductsAction';
+import {  giveMeDataActionCreator } from '../../redux/recommandProducts/recommendProductsAction';
 
 type PropsType = WithTranslation & ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatchToProps>
 
 class HomePageComponent extends Component<PropsType> {
-  async componentDidMount() {
-    this.props.fetchStart();
-    try {
-      const { data } = await axios("https://console-mock.apipost.cn/app/mock/project/bda5e1f9-5f62-4812-89b4-10dabd7e32b0//mytravel/list");
-      // console.log("data",data);
-      this.props.fetchSuccess(data.list1);
-    } catch (error) {
-      this.props.fetchFail(error);
-    }
+  componentDidMount() {
+    this.props.giveMeData();  
   }
 
   render() {
@@ -91,14 +84,8 @@ const mapStateToProps = (state: RootState) => {
 }
 const mapDispatchToProps = (dispatch: any) => {
   return {
-    fetchStart: () => {
-      dispatch(fetchRecommendProductStartActionCreator())
-    },
-    fetchSuccess: (data: any) => {
-      dispatch(fetchRecommendProductSuccessActionCreator(data))
-    },
-    fetchFail: (error: any) => {
-      dispatch(fetchRecommendProductFailActionCreator(error))
+    giveMeData:()=>{
+      dispatch(giveMeDataActionCreator())
     }
   }
 }
