@@ -6,7 +6,7 @@ import { RouteComponentProps, useParams } from 'react-router-dom';
 import { Footer, Header, ProductComments } from '../../components';
 import ProductIntro from '../../components/productIntro/ProductIntro';
 import { useSelector } from '../../redux/hooks';
-import { productDetailSlice } from '../../redux/productDetail/slice';
+import { getProductDetail, productDetailSlice } from '../../redux/productDetail/slice';
 import styles from './DetailPage.module.css';
 import {commentMockData} from './mockup';
 interface MatchParams{
@@ -23,17 +23,7 @@ const DetailPage: React.FC<RouteComponentProps<MatchParams>> = (props) => {
   const dispatch=useDispatch();
 
   useEffect(()=>{
-    const fetchData=async ()=>{
-          dispatch(productDetailSlice.actions.fetchStart());
-      try {
-        const {data}=await axios.get(`https://console-mock.apipost.cn/app/mock/project/bda5e1f9-5f62-4812-89b4-10dabd7e32b0/mytravel/getPath`);
-        dispatch(productDetailSlice.actions.fetchSuccess(data));
-      } catch (error:any) {
-        dispatch(productDetailSlice.actions.fetchFail(error.message));
-
-      }
-    }
-    fetchData()
+    dispatch(getProductDetail(touristRouteId));
   },[])
 
   
