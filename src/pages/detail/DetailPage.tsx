@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { RouteComponentProps, useParams } from 'react-router-dom';
 import { Footer, Header, ProductComments } from '../../components';
 import ProductIntro from '../../components/productIntro/ProductIntro';
+import { MainLayout } from '../../layouts/mainLayout';
 import { useSelector } from '../../redux/hooks';
 import { getProductDetail, productDetailSlice } from '../../redux/productDetail/slice';
 import styles from './DetailPage.module.css';
@@ -46,9 +47,7 @@ const DetailPage: React.FC<RouteComponentProps<MatchParams>> = (props) => {
   }
   console.log("product",product);
   
-  return <>
-    <Header/>
-      <div className={styles['page-content']}>
+  return <MainLayout>
         {/* 产品简介 与  日期选择 */}
       <div className={styles['product-intro-container']} >
         <Row>
@@ -125,10 +124,7 @@ const DetailPage: React.FC<RouteComponentProps<MatchParams>> = (props) => {
             <ProductComments data={commentMockData} />
           </div>
         </div>
-
-      </div>
-    <Footer/>
-  </> ;
+  </MainLayout> ;
 };
 
 export default DetailPage;

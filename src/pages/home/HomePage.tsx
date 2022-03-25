@@ -11,6 +11,7 @@ import { withTranslation, WithTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { RootState } from '../../redux/store';
 import {  giveMeDataActionCreator } from '../../redux/recommandProducts/recommendProductsAction';
+import { MainLayout } from '../../layouts/mainLayout';
 
 type PropsType = WithTranslation & ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatchToProps>
 
@@ -20,7 +21,7 @@ class HomePageComponent extends Component<PropsType> {
   }
 
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     
     const { t ,productList,loading,error} = this.props;
     const [productList1, productList2, productList3] = productList;
@@ -42,9 +43,8 @@ class HomePageComponent extends Component<PropsType> {
       return <div>{error}</div>
     }
     return (
-      <div>
-        <Header />
-        <div className={styles['page-content']}>
+      <MainLayout>
+
           <Row style={{ marginTop: 20 }}>
             <Col span={6}>
               <SideMenu />
@@ -68,10 +68,9 @@ class HomePageComponent extends Component<PropsType> {
             sideImage={sideImage3}
             products={productList3}
           />
-        </div>
+ 
         <BusinessPartners />
-        <Footer />
-      </div>
+      </MainLayout>
     )
   }
 }

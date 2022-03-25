@@ -3,6 +3,7 @@ import {useEffect} from 'react';
 import { useDispatch } from 'react-redux';
 import { useLocation, useParams } from 'react-router-dom';
 import { FilterArea, Footer, Header, ProductList } from '../../components';
+import { MainLayout } from '../../layouts/mainLayout';
 import { useSelector } from '../../redux/hooks';
 import { searchProduct } from '../../redux/productSearch/slice';
 import styles from './SearchPage.module.css';
@@ -48,9 +49,8 @@ const SearchPage: React.FC<ISearchPageProps> = (props) => {
       if (error) {
         return <div>网站出错：{error}</div>;
       }
-  return <>
-    <Header/>
-        <div className={styles['page-count']}>
+  return <MainLayout>
+
             {/* 分类过滤器 */}
             <div className={styles['product-list-container']}>
                 <FilterArea/>
@@ -67,9 +67,8 @@ const SearchPage: React.FC<ISearchPageProps> = (props) => {
                     onPageChange={onPageChange}
                 />
             </div>
-        </div>
-    <Footer/>
-  </>;
+
+  </MainLayout>;
 };
 
 export default SearchPage;
