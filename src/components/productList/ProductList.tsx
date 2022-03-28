@@ -20,7 +20,7 @@ interface Product {
 }
 interface PropsType {
   data: Product[];
-  paging: any;
+  paging?: any;
   onPageChange?: (nextPage, pageSize) => void;
 }
 
@@ -64,17 +64,19 @@ export const ProductList: React.FC<PropsType> = ({
     <List
       itemLayout="vertical"
       size="large"
-      pagination={{
+      pagination={
+        paging?
+        {
         current: paging.currentPage,
         onChange: (page) => onPageChange && onPageChange(page, paging.pageSize),
         pageSize: paging.pageSize,
         total: paging.totalCount,
-      }}
+      }:false}
       dataSource={products}
-      footer={
-        <div>
+      footer={paging&&
+        (<div>
           搜索总路线: <Text strong>{paging.totalCount}</Text> 条
-        </div>
+        </div>)
       }
       renderItem={(item) => (
         <List.Item

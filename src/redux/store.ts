@@ -9,6 +9,7 @@ import { productSearchSlice } from "./productSearch/slice";
 import {userSlice} from './user/slice';
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage';
+import { shoppingCartSlice } from "./shoppingcart/slice";
 
 const persistConfig={
     key:"root",
@@ -22,7 +23,8 @@ const rootReucer=combineReducers({
     recommendProductsReducer,
     productDetail:productDetailSlice.reducer,
     productSearch:productSearchSlice.reducer,
-    user:userSlice.reducer
+    user:userSlice.reducer,
+    shoppingCart:shoppingCartSlice.reducer
 })
 
 const persistedReducer=persistReducer(persistConfig,rootReucer)
@@ -30,7 +32,7 @@ const persistedReducer=persistReducer(persistConfig,rootReucer)
 // const store=createStore(rootReucer,applyMiddleware(thunk,actionLog));
 const store=configureStore({
     reducer:persistedReducer,
-    middleware:(getDefaultMiddleware)=>[...getDefaultMiddleware(),actionLog],
+    middleware:(getDefaultMiddleware)=>[...getDefaultMiddleware()],
     devTools:true
 })
 

@@ -22,6 +22,9 @@ export const Header: React.FC = () => {
     const jwt = useSelector(s => s.user.token);
     const [username, setUserName] = useState("");
 
+    const shoppingCartLoading=useSelector(s=>s.shoppingCart.loading);
+    const shoppingCartList=useSelector(s=>s.shoppingCart.items);
+
     useEffect(() => {
         if (jwt) {
             // console.log("jwt",jwt);
@@ -71,7 +74,7 @@ export const Header: React.FC = () => {
                             <Button.Group className={styles['button-group']}>
                                 <span>{t("header.welcome")}
                                     <Typography.Text strong>{username}</Typography.Text></span>
-                                <Button>{t("header.shoppingCart")}</Button>
+                                <Button loading={shoppingCartLoading} onClick={()=>history.push('/shoppingCart')}>{t("header.shoppingCart")}{`(${shoppingCartList.length})`}</Button>
                                 <Button onClick={onLogout}>{t("header.signOut")}</Button>
                             </Button.Group> : <Button.Group className={styles['button-group']}>
                                 <Button onClick={() => history.push('/register')}>注册</Button>

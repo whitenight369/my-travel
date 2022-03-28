@@ -1,4 +1,4 @@
-import { Anchor, Col, DatePicker, Divider, Menu, Row, Spin, Typography } from 'antd';
+import { Anchor, Button, Col, DatePicker, Divider, Menu, Row, Spin, Typography } from 'antd';
 import axios from 'axios';
 import  React,{useEffect, useState} from 'react';
 import { useDispatch } from 'react-redux';
@@ -8,6 +8,7 @@ import ProductIntro from '../../components/productIntro/ProductIntro';
 import { MainLayout } from '../../layouts/mainLayout';
 import { useSelector } from '../../redux/hooks';
 import { getProductDetail, productDetailSlice } from '../../redux/productDetail/slice';
+import { addShoppingCartItem } from '../../redux/shoppingcart/slice';
 import styles from './DetailPage.module.css';
 import {commentMockData} from './mockup';
 interface MatchParams{
@@ -22,6 +23,9 @@ const DetailPage: React.FC<RouteComponentProps<MatchParams>> = (props) => {
   const error=useSelector(state=>state.productDetail.error);
   const product=useSelector(state=>state.productDetail.data);
   const dispatch=useDispatch();
+
+  const jwt=useSelector(s=>s.user.token) as string;
+  const shoppingloading=useSelector(s=>s.shoppingCart.loading);
 
   useEffect(()=>{
     dispatch(getProductDetail(touristRouteId));
@@ -64,6 +68,17 @@ const DetailPage: React.FC<RouteComponentProps<MatchParams>> = (props) => {
             />
           </Col>
           <Col span={11}>
+            <Button 
+            style={{marginTop:50,marginBottom:30,display:"block"}} 
+            loading={shoppingloading}
+            danger
+            type='primary'
+            onClick={()=>{
+              dispatch(addShoppingCartItem({jwt,touristRouteId:product.id}))
+            }}
+            >
+              添加购物车
+            </Button>
             <DatePicker open style={{marginTop:20}}/>
           </Col>
         </Row>
