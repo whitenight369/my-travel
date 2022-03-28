@@ -21,7 +21,7 @@ export const getShoppingCart=createAsyncThunk(
         // console.log("data",data)
         return  data;
     }
-)
+) 
 
 
 export const addShoppingCartItem=createAsyncThunk(
@@ -35,6 +35,19 @@ export const addShoppingCartItem=createAsyncThunk(
             }
         });
         return  data.shoppCartItems;
+    }
+)
+
+export const checkout=createAsyncThunk(
+    "shoppingCart/checkout",
+    async (jwt:string,thunkAPI)=>{
+        const {data}=await axios.post(`https://console-mock.apipost.cn/app/mock/project/bda5e1f9-5f62-4812-89b4-10dabd7e32b0//mytravel/checkout`,{
+            headers:{
+                Authorization:`${jwt}`
+            }
+        });
+        // console.log("checkout  data",data)
+        return  data;
     }
 )
 
@@ -100,6 +113,24 @@ export const shoppingCartSlice=createSlice({
             state.error=null;
         },
         [clearShoppingCartItem.rejected.type]:(state,action)=>{
+            state.loading=false;
+            state.error=action.payload;
+        },
+        [checkout.pending.type] :(state)=>{
+            // console.log("erordasda");
+            // return {...state,loading:true}
+            // 因为有immer这个包 所以避免上面的那种写法;
+            state.loading=true;
+        },
+        [checkout.fulfilled.type]:(state,action)=>{
+            // console.log("action",action); 
+            state.items=[];
+            state.loading=false;
+            state.error=null;
+        },
+        [checkout.rejected.type]:(state,action)=>{
+            // console.log("eror");
+            
             state.loading=false;
             state.error=action.payload;
         },

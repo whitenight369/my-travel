@@ -1,9 +1,10 @@
 import { Affix, Col, Row } from 'antd';
 import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { PaymentCard, ProductList } from '../../components';
 import { MainLayout } from '../../layouts/mainLayout';
 import { useSelector } from '../../redux/hooks';
-import { clearShoppingCartItem } from '../../redux/shoppingcart/slice';
+import { checkout, clearShoppingCartItem } from '../../redux/shoppingcart/slice';
 import styles from './ShoppingCart.module.css';
 
 interface IShoppingCartProps {
@@ -14,6 +15,7 @@ export const ShoppingCart: React.FC<IShoppingCartProps> = (props) => {
     const shoppingCartItems=useSelector(s=>s.shoppingCart.items);
     const jwt=useSelector(s=>s.user.token) as string;
     const dispatch=useDispatch();
+    const history=useHistory();
 
         console.log("shoppingCartItems",shoppingCartItems)
   return (
@@ -42,7 +44,11 @@ export const ShoppingCart: React.FC<IShoppingCartProps> = (props) => {
                                     }
                                     onCheckout={
                                         ()=>{
-
+                                            if(shoppingCartItems.length<=0){
+                                                return ;
+                                            }
+                                            dispatch(checkout(jwt));
+                                            history.push('/placeOrder');
                                         }
                                     }
                                     onShoppingCartClear={()=>{

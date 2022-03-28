@@ -40,9 +40,9 @@ export const CheckOutCard: React.FC<PropsType> = ({
   const history = useHistory();
 
   const paymentData: OrderItem[] = order
-    ? order.orderItems.map((i, index) => ({
+    ? order.map((i, index) => ({
         key: index,
-        item: i.touristRoute.title,
+        item: i.title,
         amount: (
             <>
               <Text delete>¥ {i.originalPrice} </Text>{" "}
